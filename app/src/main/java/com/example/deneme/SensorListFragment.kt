@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -32,7 +33,7 @@ class SensorListFragment : Fragment() {
         sensorAdapter = SensorDataAdapter(sensorList)
         recyclerView.adapter = sensorAdapter
 
-        database = FirebaseDatabase.getInstance("https://bitirme-da538-default-rtdb.firebaseio.com").reference
+        database = FirebaseDatabase.getInstance("https://erhanb-c2e6d-default-rtdb.firebaseio.com").reference
         fetchDataFromFirebase()
 
         return view
@@ -55,4 +56,6 @@ class SensorListFragment : Fragment() {
             }
         })
     }
+
+
 }

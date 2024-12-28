@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.deneme.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -33,7 +34,7 @@ class LoginFragment : Fragment() {
             navigateToMenuFragment()
             val email = binding.emailEditText.text.toString().trim()
             val password = binding.passwordEditText.text.toString().trim()
-/*
+
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
@@ -46,7 +47,7 @@ class LoginFragment : Fragment() {
                     }
             } else {
                 Toast.makeText(context, "Please fill in all fields.", Toast.LENGTH_SHORT).show()
-            }*/
+            }
         }
 
         // Register Text'e Tıklama: RegisterFragment'e Geçiş
@@ -58,6 +59,8 @@ class LoginFragment : Fragment() {
             transaction.commit()
         }
     }
+
+
 
     private fun navigateToMenuFragment() {
         // MenuFragment'e geçiş

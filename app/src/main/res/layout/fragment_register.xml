@@ -6,11 +6,26 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="Welcome back"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textFontWeight="@android:integer/config_longAnimTime"
+        android:textSize="38sp"
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+
+        android:background="@drawable/rounded_login"
         android:padding="10dp"
         android:hint="Name" />
 
@@ -18,15 +33,19 @@
         android:id="@+id/surnameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_login"
         android:padding="10dp"
-        android:layout_marginBottom="10dp"
+        android:paddingStart="10dp"
+        android:layout_marginBottom="20dp"
         android:hint="Surname" />
 
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
+        android:background="@drawable/rounded_login"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
+        android:paddingStart="10dp"
         android:hint="Email"
         android:inputType="textEmailAddress" />
 
@@ -34,7 +53,9 @@
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        android:background="@drawable/rounded_login"
         android:hint="Password"
         android:inputType="textPassword" />
 
@@ -42,6 +63,8 @@
         android:id="@+id/registerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_button"
         android:text="Register"
         android:layout_marginTop="16dp" />
 </LinearLayout>

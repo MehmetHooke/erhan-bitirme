@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "247824163432",
+    "project_id": "erhanb-c2e6d",
+    "storage_bucket": "erhanb-c2e6d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247824163432:android:cb5b1e31f8a25dbaae51dd",
+        "android_client_info": {
+          "package_name": "com.example.deneme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247824163432-8saa8hq2n49e5cemf5mp472cp4mvn7ob.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.deneme",
+            "certificate_hash": "74ccf9b85486d4bd15ec692210d780f05c6139f2"
+          }
+        },
+        {
+          "client_id": "247824163432-0busk4j9g4rtrrmlne58c5fj32tjpq51.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRF_xds0s435wxkWIEBcYVz5ISkE0auIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "247824163432-0busk4j9g4rtrrmlne58c5fj32tjpq51.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

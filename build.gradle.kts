@@ -5,7 +5,7 @@ buildscript {
         mavenCentral() // Central Maven repository
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:8.1.0") // Android Gradle Plugin
+        classpath("com.android.tools.build:gradle:8.6.0") // Android Gradle Plugin
         classpath("com.google.gms:google-services:4.4.2") // Google Services Plugin
     }
 }
