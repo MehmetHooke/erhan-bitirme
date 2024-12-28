@@ -6,71 +6,54 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
+// TODO: Rename parameter arguments, choose names that match
+// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
 
-import org.tensorflow.lite.Interpreter
-import android.content.res.AssetFileDescriptor
-import java.io.FileInputStream
-import java.nio.ByteBuffer
-import java.nio.channels.FileChannel
-import android.util.Log
-import android.widget.TextView
-
-
+/**
+ * A simple [Fragment] subclass.
+ * Use the [DiseaseFragment.newInstance] factory method to
+ * create an instance of this fragment.
+ */
 class DiseaseFragment : Fragment() {
+    // TODO: Rename and change types of parameters
+    private var param1: String? = null
+    private var param2: String? = null
 
-    private lateinit var interpreter: Interpreter
-    private lateinit var resultTextView: TextView
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            param1 = it.getString(ARG_PARAM1)
+            param2 = it.getString(ARG_PARAM2)
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Fragment layout'unu inflate et
-        val view = inflater.inflate(R.layout.fragment_disease, container, false)
-
-        // TextView'i XML'den bağla
-        resultTextView = view.findViewById(R.id.textView5)
-
-        // TensorFlow Lite modelini yükle
-        loadTFLiteModel()
-
-        // Modeli çalıştır ve sonucu göster
-        runModelInference()
-
-        return view
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_disease, container, false)
     }
 
-    private fun loadTFLiteModel() {
-        // assets klasöründeki TFLite modelini yükle
-        val modelPath = "tomato_disease_model.tflite"
-        val tfliteModel = loadModelFile(requireActivity().assets, modelPath)
-        interpreter = Interpreter(tfliteModel)
-        Log.d("DiseaseFragment", "TFLite Model Yüklendi!")
-    }
-
-    private fun runModelInference() {
-        // Örnek input tensorü: 150x150x3 boyutunda rastgele veriler
-        val input = Array(1) { Array(150) { Array(150) { FloatArray(3) } } }
-        val output = Array(1) { FloatArray(10) } // Çıktı tensorü: 10 sınıf
-
-        // Modeli çalıştır
-        interpreter.run(input, output)
-
-        // En yüksek olasılığa sahip sınıfı bul ve TextView'e yazdır
-        val maxIndex = output[0].indices.maxByOrNull { output[0][it] } ?: -1
-        val resultText = "Tahmin Edilen Sınıf: $maxIndex\nGüven Skoru: ${output[0][maxIndex]}"
-
-        // Sonucu ekrana yazdır
-        resultTextView.text = resultText
-        Log.d("DiseaseFragment", resultText)
-    }
-
-    private fun loadModelFile(assetManager: android.content.res.AssetManager, modelPath: String): ByteBuffer {
-        val fileDescriptor: AssetFileDescriptor = assetManager.openFd(modelPath)
-        val inputStream = FileInputStream(fileDescriptor.fileDescriptor)
-        val fileChannel: FileChannel = inputStream.channel
-        val startOffset: Long = fileDescriptor.startOffset
-        val declaredLength: Long = fileDescriptor.declaredLength
-        return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength)
+    companion object {
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param param1 Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment DiseaseFragment.
+         */
+        // TODO: Rename and change types and number of parameters
+        @JvmStatic
+        fun newInstance(param1: String, param2: String) =
+            DiseaseFragment().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1, param1)
+                    putString(ARG_PARAM2, param2)
+                }
+            }
     }
 }

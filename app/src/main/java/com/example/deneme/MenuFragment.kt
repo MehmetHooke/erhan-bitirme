@@ -31,6 +31,28 @@ class MenuFragment : Fragment() {
             transaction.commit()
         }
 
+        val btn_sensor = view.findViewById<Button>(R.id.btn_sensor)
+        btn_sensor.setOnClickListener {
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, SensorListFragment())
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+
+
+        // btn_disease butonunu bul ve tıklama işlemini tanımla
+        val btnDisease = view.findViewById<Button>(R.id.btn_disease)
+        btnDisease.setOnClickListener {
+            // DiseaseFragment'a geçiş yap
+            val diseaseFragment = HastalikFragment()
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, diseaseFragment)
+            transaction.addToBackStack(null) // Geri tuşu ile geri dönmek için
+            transaction.commit()
+        }
+
+
+
         return view
     }
 }

@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">Deneme</string>
+    <string name="app_name">Bitirme</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="password">Password</string>
+    <string name="default_web_client_id">AIzaSyDsmyjghUkReMrwV-IvEtUADnlb9KxeD8I</string>
+
 </resources>

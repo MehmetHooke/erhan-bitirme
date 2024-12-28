@@ -20,7 +20,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class WeatherFragment : Fragment() {
+class   WeatherFragment : Fragment() {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var tvCityName: TextView
     private lateinit var tvTemperature: TextView

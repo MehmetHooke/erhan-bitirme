@@ -4,14 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    >
 
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/btncolor"
+        android:fontFamily="sans-serif-medium"
+        android:padding="16dp"
+        android:text="Weather Page"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+         />
     <TextView
         android:id="@+id/tv_city_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="City: -"
         android:textSize="20sp"
+        android:paddingTop="20dp"
+        android:paddingStart="16dp"
         android:textStyle="bold" />
 
     <TextView
@@ -19,6 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Temperature: -"
+        android:paddingStart="16dp"
         android:textSize="18sp"
         android:layout_marginTop="8dp" />
 
@@ -28,6 +44,7 @@
         android:layout_height="wrap_content"
         android:text="Weather: -"
         android:textSize="18sp"
+        android:paddingStart="16dp"
         android:layout_marginTop="8dp" />
 
 </LinearLayout>
